@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="Hamburger Menu btn Animation by using css and jquery">
+    <meta name="keywords" content="boostrap 4, menu, btn, menu button, animation" />
+		<meta name="author" content="Fadi Nemer">
+		<title>Hamburger Menu btn Animation</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <style>
+    * {
+    	box-sizing: border-box;
+    }
+
+    body, html{
+    	height:100%;
+    	margin: 0;
+    	padding: 0;
+    }
+
+    /* logo start*/
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 50px;
+        z-index: 99999;
+    	display: none;
+    }
+
+    .logo a {
+    	text-decoration: none;
+
+    }
+
+    .topLogo:hover{
+    	text-decoration: none;
+    	color: #fff;
+    }
+    .topLogo{
+    	text-decoration: none;
+    	color: #fff;
+
+    }
+
+    .topLogoRed{
+    	text-decoration: none;
+    	color: #000;
+    }
+
+    .topLogoRed:hover{
+    	text-decoration: none;
+    	color: #000;
+    }
+
+    .logo-in-expand {
+    	-webkit-animation: logo-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    	animation: logo-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    	font-size: 180%;
+    	color: #fff;
+    	font-weight: 300;
+    	text-align: center;
+    	text-transform: uppercase;
+    }
+
+
+    @-webkit-keyframes logo-in-expand {
+    	0% {
+    		letter-spacing: -0.5em;
+    		opacity: 0;
+    		}
+    	40% {
+    		opacity: 0.6;
+    	}
+    	100% {
+    		opacity: 1;
+    	}
+    }
+    @keyframes logo-in-expand {
+    	0% {
+    		letter-spacing: -0.5em;
+    		opacity: 0;
+    	}
+    	40% {
+    		opacity: 0.6;
+    	}
+    	100% {
+    		opacity: 1;
+    	}
+    }
+
+    .navbar-logo {
+        font-size: 2rem;
+    }
+    /* logo end*/
+
+
+    /* general hidden elemnt class start*/
+    .hid{
+    	display:none;
+    }
+    /* general hidden elemnt class end*/
+
+
+    /* Hamburger menu btn start*/
+    .menu {
+    	display: inline-block;
+    	cursor: pointer;
+    	position: absolute;
+        top: 20px;
+        right: 50px;
+    	z-index: 999999;
+    	padding: 4px;
+    	transform: scale(-1, 1);
+    }
+
+    .menu-expand {
+    	-webkit-animation: menu-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    	animation: menu-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    	text-transform: uppercase;
+    }
+
+
+    @-webkit-keyframes menu-expand {
+    	0% {
+    		letter-spacing: -0.5em;
+    		opacity: 0;
+    		}
+    	40% {
+    		opacity: 0.6;
+    	}
+    	100% {
+    		opacity: 1;
+    	}
+    }
+    @keyframes menu-expand {
+    	0% {
+    		letter-spacing: -0.5em;
+    		opacity: 0;
+    	}
+    	40% {
+    		opacity: 0.6;
+    	}
+    	100% {
+    		opacity: 1;
+    	}
+    }
+
+
+    .bar1, .bar2, .bar3, .bar4 {
+    	width: 35px;
+    	height: 2px;
+    	background-color: #fff;
+    	margin: 5px 0;
+
+    	transition: 0.5s;
+    }
+
+    .change1 {
+    	width: 10px;
+    	background-color: #000;
+    	align: right;
+    }
+    .change2 {
+    	width: 20px;
+    	background-color: #000;
+    	align: right;
+    }
+
+    .change3 {
+    	width: 15px;
+    	background-color: #000;
+    	text-align: justify;
+    }
+
+    .change4 {
+    	width: 30px;
+    	background-color: #000;
+    	text-align: justify;
+    }
+
+    .hidbtn{
+    	display: none; // to hide at the intro
+    }
+
+    /* Hamburger menu btn end*/
+
+    button:focus{
+    	border: 0;
+    	outline:none;
+    }
+    /* adjust contact form main menu start*/
+
+    /* copyright start*/
+    @media (min-width: 430px){
+    	.copyright {
+    		position: absolute;
+    		bottom: 20px;
+    		left: 50px;
+    		z-index: 2;
+    		opacity: 0.6;
+    	}
+
+    }
+
+    .copyright span, .copyright span a {
+        font-family: "proxima-nova",sans-serif;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        color: #fff;
+    }
+    /* copyright end*/
+
+    /* main page video style */
+    #videoContainer {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	overflow: hidden;
+    	z-index: 0;
+    }
+
+    #videoContainer #mainVideo{
+    	min-width: 100%;
+    	min-height: 100%;
+
+    	/* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    	width: auto;
+    	height: auto;
+
+    	/* Center the video */
+    	position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	transform: translate(-50%,-50%);
+    }
+    /* Div video btn*/
+    @media (min-width: 700px) {
+    	.videobtn {
+    		position: absolute;
+    		bottom: 20px;
+    		right: 50px;
+    		z-index: 2;
+    		opacity: 0.6;
+    		}
+    		.btnVideo {
+    		padding-left: 30px;
+    		float: right;
+    	}
+    }
+
+    @media (max-width: 699px) {
+    	.videobtn {
+    		position: absolute;
+    		margin-left: auto;
+    		margin-right: auto;
+    		left: 0;
+    		right: 0;
+    		bottom: 50px;
+    		text-align: center;
+    		z-index: 2;
+    		opacity: 0.6;
+    	}
+    	.copyright {
+    		position: absolute;
+    		margin-left: auto;
+    		margin-right: auto;
+    		left: 0;
+    		right: 0;
+    		bottom: 20px;
+    		text-align: center;
+    		z-index: 2;
+    		opacity: 0.6;
+    		line-height: 1;
+    	}
+    }
+
+    @media (max-width: 200px) {
+    	.copyright {
+        visibility: hidden;
+    	}
+    }
+
+    /*video btns*/
+    .btnVideo {
+    	font-family: "proxima-nova",sans-serif;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        color: #fff;
+    	border: none;
+    	background: transparent;
+    	cursor: pointer;
+    	outline:none;
+    }
+
+    .btnVideo:hover {
+    	background: transparent;
+    	color: #ddd;
+    }
+    /* end video style*/
+
+    /* navigation */
+
+    .sidenav {
+    	height: 0;
+    	width: 0;
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	background-color: #fff;
+    	overflow-x: hidden;
+    	transition: 0.5s;
+    	padding-top: 60px;
+    	margin: 0;
+    }
+    .biggest {
+    	height: 100%;
+    	width: 100%;
+    	z-index: 9999;
+    }
+    @media (min-width: 375px) {
+    	.nav {
+    		font-size: 180%;
+    	}
+    }
+    @media (max-width: 374px) {
+    	.nav {
+    		font-size: 150%;
+    	}
+    }
+    .nav {
+    	display: none;
+    	max-height: 100%;
+    	border-right: 10px solid #000;
+    	max-width: 24rem;
+    	background-color: #fff;
+    	margin-top: auto;
+    	font-weight: 300;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    }
+
+    nav a {
+    	color: #6c757d;
+    }
+
+    nav a:hover {
+    	color: #000;
+    }
+
+    .dropdown-menu {
+    	background-color: #fff;
+    }
+    .dropdown-menu a {
+    	background-color: #fff;
+    	color: #6c757d;
+    }
+
+    .dropdown-menu a:hover {
+    	background-color: #6c757d;
+    	color: #fff;
+    }
+
+    #mainCounterForm > textarea:focus, #mainCounterForm > input:focus{
+        outline: none;
+    }
+
+    button:focus {
+    	border-color: inherit;
+    	-webkit-box-shadow: none;
+    	box-shadow: none;
+    }
+
+    #slideshow > div > h3 > a {
+    	color: #6c757d;
+    }
+
+    #slideshow > div > h3 > a:hover {
+    	color: #000;
+    	text-decoration: none;
+    }
+
+    #slideshow > div > h3 {
+    		position: absolute;
+    		top: 10px;
+    		left: 10px;
+    		right: 10px;
+    		bottom: 10px;
+    		text-align: justify;
+    		font-weight: 300;
+    		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+    		text-transform: uppercase;
+    		letter-spacing: 0.4em;
+    	}
+
+    @media (min-width: 1100px) {
+    	#slideshow {
+    		position: absolute;
+    		top: 60px;
+    		right: 50px;
+    		width: 600px;
+    	}
+    	#slideshow > div > h3 {
+    		font-size: 1.6rem;
+    	}
+    }
+
+    @media (max-width: 1099px) {
+    	#slideshow {
+    		position: absolute;
+    		top: 60px;
+    		right: 50px;
+    		width: 500px;
+    	}
+    	#slideshow > div > h3 {
+    		font-size: 1.6rem;
+    	}
+    }
+
+    @media (max-width: 969px) {
+    	#slideshow {
+    		position: absolute;
+    		top: 60px;
+    		right: 50px;
+    		width: 400px;
+    	}
+    	#slideshow > div > h3 {
+    		font-size: 1.4rem;
+    	}
+    }
+    @media (max-width: 880px) {
+    	#slideshow {
+    		position: absolute;
+    		top: 60px;
+    		right: 50px;
+    		width: 300px;
+    	}
+    	#slideshow > div > h3 {
+    		font-size: 1.4rem;
+    	}
+    }
+
+    @media (max-width: 768px) {
+    	#slideshow {
+    		position: absolute;
+    		top: 60px;
+    		right: 50px;
+    		width: 200px;
+    	}
+    	#slideshow > div > h3 {
+    		font-size: 1rem;
+    	}
+    }
+
+    @media (max-width: 693px) {
+    	#slideshow {
+    		position: absolute;
+    		top: 60px;
+    		right: 50px;
+    		width: 250px;
+    	}
+    	#slideshow > div > h3 {
+    		font-size: 1rem;
+    	}
+    }
+
+    @media (max-width: 692px) and (min-height: 500px) {
+    	#slideshow {
+    		position: relative;
+    		top: 20px;
+    		margin: auto;
+    		max-width: 100%;
+    		z-index: -1;
+    	}
+    	#slideshow > div > h3 {
+    		font-size: 1rem;
+    		text-align: center;
+    	}
+    }
+    @media (max-height: 499px) {
+    	#slideshow {
+    		display: none;
+    	}
+    	#slideshow > div {
+    		display: none;
+    	}
+    }
+    @media (max-width: 320px) {
+    	.sosDiv {
+    		position: absolute;
+    		right: 20px;
+    		bottom: 20px;
+    		letter-spacing: 0.2em;
+    		font-weight: 300;
+    		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    		text-transform: uppercase;
+    	}
+    }
+    @media (min-width: 321px) {
+    	.sosDiv {
+    		position: absolute;
+    		bottom: 20px;
+    		right: 50px;
+    		font-weight: 300;
+    		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+    		text-transform: uppercase;
+    		letter-spacing: 0.4em;
+    	}
+    }
+
+    @media (max-height: 412px) and (max-width: 775px) {
+    	.sosDiv {
+    		position: absolute;
+    		width: 120px;
+    		bottom: 20px;
+    		right: 50px;
+    		font-weight: 300;
+    		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    		text-align: right;
+    		text-transform: uppercase;
+    		letter-spacing: 0.2em;
+    	}
+    }
+
+    @media (max-height: 321px) and (max-width: 569px) {
+    	.sosDiv {
+    		position: absolute;
+    		width: 120px;
+    		bottom: 20px;
+    		right: 20px;
+    		font-weight: 300;
+    		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    		text-align: right;
+    		text-transform: uppercase;
+    		letter-spacing: 0.2em;
+    	}
+    }
+    .sosDiv > ul > li > a {
+    	color: #000;
+    }
+
+    .sosDiv > ul > li > a:hover {
+    	color: #000;
+    	text-decoration: none;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="logo hid logo-in-expand">
+			<h3 class="navbar-logo display-4"><a class="topLogo" href="#" onclick="return fakeLink();">Fadi</a></h3>
+		</div>
+		<div class="menu hidbtn" id="menuBtn">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+			<div class="bar4"></div>
+		</div>
+
+		<menu id="mySidenav" class="sidenav">
+			<nav class="nav">
+				<div class="container menu-expand" id="navbarsExample04">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="return fakeLink();"><span class="fas fa-home"></span> Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="Private" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-share"></span> Dropdown</a>
+              <div class="dropdown-menu transparen" aria-labelledby="Private">
+                <a class="dropdown-item" href="https://example.com">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="https://example.com">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="return fakeLink();"><span class="fas fa-hotel"></span> Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="return fakeLink();"><span class="fas fa-address-card"></span> About</a>
+            </li>
+          </ul>
+        </div>
+			</nav>
+			<div id="slideshow">
+        <div>
+					<h3>this is a slideshow, you can add images or text</h3>
+				</div>
+        <div>
+					<h3>here is my <a href="https://twitter.com/f_nimer">twitter</a> account link</h3>
+				</div>
+				<div>
+					<h3>this is another text</h3>
+				</div>
+				<div>
+					<h3>& this is the last one.</h3>
+				</div>
+			</div>
+			<div class="sosDiv">
+				<ul class="list-inline menu-expand">
+					<li class="list-inline-item">Follow Me:</li>
+					<li class="list-inline-item"><a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/f_nimer"><span class="fab fa-twitter"></span></a></li>
+					<li class="list-inline-item"><a class="social-icon text-xs-center" target="_blank" href="https://instagram.com/f_nimer"><span class="fab fa-instagram"></span></a></li>
+					<li class="list-inline-item"><a class="social-icon text-xs-center" target="_blank" href="https://www.youtube.com/watch?v=ZI3uhts1zEc&t=8s"><span class="fab fa-youtube"></span></a></li>
+				</ul>
+			</div>
+		</menu>
+    <div id="videoContainer">
+			<video autoplay muted loop playsinline id="mainVideo" class="hidden-xs-down">
+				<source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+			</video>
+		</div>
+    <div id="copyright" class="copyright hid">
+		</div>
+		<div class="videobtn hid">
+				<button class="btnVideo" id="pauseBtn" onclick="myPause()">PAUSE <span class='fas fa-pause'></span></button>
+				<button class="btnVideo" id="muteBtn" onclick="myMute()">SOUND <span class='fas fa-volume-up'></span></button>
+		</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
+    <script>
+      var video = document.getElementById("mainVideo");
+      var btnP = document.getElementById("pauseBtn");
+      var btnM = document.getElementById("muteBtn");
+      video.volume = 0.1;
+      function myPause() {
+
+        if (video.paused) {
+          video.play();
+          btnP.innerHTML = "PAUSE <span class='fas fa-pause'></span>";
+        } else {
+          video.pause();
+          video.currentTime = 0;
+          btnP.innerHTML = "PLAY <span class='fas fa-play'></span>";
+        }
+      }
+
+      function myMute() {
+        if (video.muted) {
+          video.muted = false;
+          btnM.innerHTML = "MUTE <span class='fas fa-volume-mute'></span>";
+        } else {
+          video.muted = true;
+          btnM.innerHTML = "SOUND <span class='fas fa-volume-up'></span>";
+        }
+      }
+      $("#menuBtn").click(function(){
+          $(".bar1").toggleClass("change1");
+          $(".bar2").toggleClass("change2");
+          $(".bar3").toggleClass("change3");
+          $(".bar4").toggleClass("change4");
+          $("#mySidenav").toggleClass( "biggest", "slow" );
+          $('.nav').delay(200).slideToggle( "slow" );
+          $('.topLogo').toggleClass('topLogoRed');
+        });
+
+        $(document).ready(function(){
+
+				$("#slideshow > div:gt(0)").hide();
+
+					setInterval(function() {
+					  $('#slideshow > div:first')
+						.fadeOut(990)
+						.next()
+						.fadeIn(1000)
+						.end()
+						.appendTo('#slideshow');
+					}, 5000);
+
+				$('.hid, .hidbtn').delay(2000).slideDown( "slow" );
+
+				setTimeout(function() {
+				}, 5000);
+
+      });
+        //Fake link to avoid jumb href
+  			var fakeLink = function(x) {
+  				return false;
+  			}
+
+  			<!--
+  			var	toDay, copyright, fullOfYear;
+  			copyright = document.getElementById('copyright');
+  			toDay = new Date();
+  			fullOfYear=toDay.getFullYear();
+  			copyright.innerHTML ='<span>© ' + fullOfYear + ' Fadi Nemer</span>';
+        // end copyright --->
+    </script>
+  </body>
+</html>
